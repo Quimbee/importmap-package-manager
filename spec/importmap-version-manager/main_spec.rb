@@ -1,5 +1,5 @@
-RSpec.describe ImportmapVersionManager do
+RSpec.describe ImportmapPackageManager do
   it "has a version number" do
-    expect(ImportmapVersionManager::VERSION).not_to be nil
+    expect(ImportmapPackageManager::VERSION).not_to be nil
   end
 end
