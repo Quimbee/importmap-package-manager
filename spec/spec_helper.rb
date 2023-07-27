@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "importmap/version/manager"
+require "importmap-package-manager"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
