@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@2.1.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - ruby/install:
+          version: '2.7'
+      - ruby/install-deps
+      - run:
+          name: RSpec Tests
+          command: "bundle exec rspec spec/**/*_spec.rb"
+
+workflows: null
