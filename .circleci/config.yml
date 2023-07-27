@@ -12,7 +12,8 @@ jobs:
       - ruby/install:
           version: '2.7'
       - ruby/install-deps
-      - ruby/rspec-test:
-        include: spec/**/*_spec.rb
+      - run:
+          name: RSpec Tests
+          command: "bundle exec rspec spec/**/*_spec.rb"
 
 workflows: null
