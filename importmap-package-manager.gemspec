@@ -1,4 +1,4 @@
-require_relative 'lib/importmap-package-manager/version'
+require_relative "lib/importmap-package-manager/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "importmap-package-manager"

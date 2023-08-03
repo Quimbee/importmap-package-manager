@@ -50,8 +50,8 @@ module ImportmapPackageManager
 
         # Step 2: Find latest version that matches version_requirement
         versions.sort.reverse.find { |version| version_requirement.satisfied_by?(version) && !version.prerelease? }
-      rescue => error
-        raise HTTPError, "Unexpected transport error (#{error.class}: #{error.message})"
+      rescue StandardError => e
+        raise HTTPError, "Unexpected transport error (#{e.class}: #{e.message})"
       end
 
       def resolve_import_urls(import_definitions)
@@ -60,7 +60,7 @@ module ImportmapPackageManager
           {
             install: import_definitions,
             flattenScope: true,
-            env: ["browser", "module", "production"],
+            env: %w[browser module production],
             defaultProvider: "jspm"
           }.to_json,
           "Content-Type" => "application/json"
