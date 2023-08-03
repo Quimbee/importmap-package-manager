@@ -1,5 +1,5 @@
-require 'importmap-package-manager'
-require 'rails'
+require "importmap-package-manager"
+require "rails"
 
 module ImportmapPackageManager
   class Railtie < Rails::Railtie

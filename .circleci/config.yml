@@ -15,5 +15,8 @@ jobs:
       - run:
           name: RSpec Tests
           command: "bundle exec rspec spec/**/*_spec.rb"
+      - run:
+          name: Rubocop
+          command: "bundle exec rubocop"
 
 workflows: null
