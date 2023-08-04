@@ -11,7 +11,7 @@
 
 AllCops:
   NewCops: disable
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
   SuggestExtensions: false
 
 Layout/ArgumentAlignment:
