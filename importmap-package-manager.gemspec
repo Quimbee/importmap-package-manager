@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Manages importmap package versions using ruby-like version constraints"
   spec.homepage      = "https://github.com/Quimbee/importmap-package-manager"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/Quimbee/importmap-package-manager"
