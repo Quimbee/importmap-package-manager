@@ -72,7 +72,7 @@ module ImportmapPackageManager
           raise "Error resolving imports: #{json_response['error']}"
         end
 
-        json_response.dig("map", "imports")
+        json_response.dig("map", "imports").sort.to_h
       end
 
       def update_lockfile!(import_map)
