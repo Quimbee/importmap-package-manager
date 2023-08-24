@@ -72,6 +72,9 @@ module ImportmapPackageManager
           raise "Error resolving imports: #{json_response['error']}"
         end
 
+        # Note: ideally, we would also want to pull "scopes" out of the response, to support
+        # incompatible subdependencies. However, importmap-rails does not support subdependencies
+        # yet: https://github.com/rails/importmap-rails/issues/148
         json_response.dig("map", "imports").sort.to_h
       end
 
