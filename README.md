@@ -1,6 +1,8 @@
 # importmap-package-manager
 
-`importmap-package-manager` adds package version management to [importmap-rails](https://github.com/rails/importmap-rails) via version ranges, similar to how version ranges can be specified in `Gemfile` (eg `~> 4.0`)
+`importmap-package-manager` adds package version management to [importmap-rails](https://github.com/rails/importmap-rails) via version ranges, similar to how version ranges can be specified in `Gemfile` (eg `~> 4.0`).
+
+This is for managing third-party libraries. For your own first-party code, that will still be managed in the normal ways via `importmap-rails`.
 
 ## Installation
 
