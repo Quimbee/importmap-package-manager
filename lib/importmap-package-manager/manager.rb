@@ -2,6 +2,8 @@ require "yaml"
 
 module ImportmapPackageManager
   class Manager
+    HTTPError = Class.new(StandardError)
+
     class << self
       def update!(config: nil, lockfile: nil)
         unless config
