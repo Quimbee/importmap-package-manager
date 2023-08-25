@@ -24,7 +24,7 @@ Layout/ConditionPosition:
   Enabled: false
 
 Layout/DotPosition:
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
