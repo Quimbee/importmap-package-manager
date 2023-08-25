@@ -73,7 +73,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/quimbe
 
 ## License
 
-TBD
+importmap-package-manager is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
 
