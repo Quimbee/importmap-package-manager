@@ -49,7 +49,7 @@ module ImportmapPackageManager
 
       def resolve_package_version(package, version_requirement)
         # Step 1: Query NPM registry for all versions
-        response = Net::HTTP.get(URI("https://registry.npmjs.org/#{package}"), "Content-Type" => "application/json")
+        response = Net::HTTP.get(URI("https://registry.npmjs.org/#{package}"))
         versions = JSON.parse(response)["versions"].keys.map { |version_string| Gem::Version.new(version_string) }
 
         # Step 2: Find latest version that matches version_requirement

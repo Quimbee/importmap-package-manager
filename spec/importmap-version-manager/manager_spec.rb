@@ -5,7 +5,6 @@ RSpec.describe ImportmapPackageManager::Manager do
     let(:npm_response) { { versions: { "1.0.0" => {}, "1.0.1" => {}, "1.0.2" => {}, "1.1.0" => {}, "2.0.0" => {} } } }
     let!(:npm_request) do
       stub_request(:get, "https://registry.npmjs.org/package-name")
-        .with(headers: { "Content-Type" => "application/json" })
         .to_return_json(body: npm_response)
     end
 
