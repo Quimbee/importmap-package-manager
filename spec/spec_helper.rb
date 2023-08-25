@@ -1,4 +1,6 @@
 require "bundler/setup"
+require "webmock/rspec"
+require "pry-byebug"
 require "importmap-package-manager"
 
 RSpec.configure do |config|
