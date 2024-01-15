@@ -60,7 +60,8 @@ In this case, the key is just a unique identifier. It isn't used at all.
 
 The options that can be passed for each import are:
 
-|| Option || Description ||
+| Option | Description |
+| ------ | ----------- |
 | package | Package name, as listed in npmjs.com |
 | version | Version number constraint, using [ruby syntax](https://guides.rubygems.org/patterns/#pessimistic-version-constraint) |
 | subpath | A subpath within the package to pin. This will be used in both the import name, and the path. |
