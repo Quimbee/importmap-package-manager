@@ -1,3 +1,8 @@
+[![Version][rubygems_badge]][rubygems]
+[![CI][ci_badge]][ci]
+[![License][license_badge]][license]
+
+
 # importmap-package-manager
 
 `importmap-package-manager` adds package version management to [importmap-rails](https://github.com/rails/importmap-rails) via version ranges, similar to how version ranges can be specified in `Gemfile` (eg `~> 4.0`).
@@ -78,3 +83,10 @@ importmap-package-manager is released under the [MIT License](https://opensource
 ## Code of Conduct
 
 Everyone interacting in the Importmap::Version::Manager project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/quimbee/importmap-package-manager/blob/master/CODE_OF_CONDUCT.md).
+
+[rubygems_badge]: https://badgen.net/rubygems/v/importmap-package-manager
+[rubygems]: https://rubygems.org/gems/importmap-package-manager
+[ci_badge]: https://badgen.net/circleci/github/Quimbee/importmap-package-manager/main
+[ci]: https://app.circleci.com/pipelines/github/Quimbee/importmap-package-manager?branch=main
+[license_badge]: https://badgen.net/static/license/MIT/blue
+[license]: LICENSE
