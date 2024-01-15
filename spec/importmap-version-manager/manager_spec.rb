@@ -18,7 +18,7 @@ RSpec.describe ImportmapPackageManager::Manager do
             install: jspm_install_definitions,
             flattenScope: true,
             env: %w[browser module production],
-            defaultProvider: "jspm"
+            defaultProvider: "jspm.io"
           }.to_json,
           headers: { "Content-Type" => "application/json" }
         )

@@ -65,7 +65,7 @@ module ImportmapPackageManager
             install: import_definitions,
             flattenScope: true,
             env: %w[browser module production],
-            defaultProvider: "jspm"
+            defaultProvider: "jspm.io"
           }.to_json,
           "Content-Type" => "application/json"
         )
