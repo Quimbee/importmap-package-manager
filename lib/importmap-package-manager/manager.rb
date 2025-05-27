@@ -50,10 +50,13 @@ module ImportmapPackageManager
       def resolve_package_version(package, version_requirement)
         # Step 1: Query NPM registry for all versions
         response = Net::HTTP.get(URI("https://registry.npmjs.org/#{package}"))
-        versions = JSON.parse(response)["versions"].keys.map { |version_string| Gem::Version.new(version_string) }
+        versions = JSON.parse(response)["versions"].keys
 
         # Step 2: Find latest version that matches version_requirement
-        versions.sort.reverse.find { |version| version_requirement.satisfied_by?(version) && !version.prerelease? }
+        satisfying_versions = versions.select { |version| version_requirement.satisfied_by?(Gem::Version.new(version)) }
+        allow_prerelease = satisfying_versions.all? { |version| prerelease?(version) }
+        sorted = satisfying_versions.sort { |a, b| Gem::Version.new(a) <=> Gem::Version.new(b) }.reverse
+        sorted.find { |version| (allow_prerelease || !prerelease?(version)) }
       rescue StandardError => e
         raise HTTPError, "Unexpected transport error (#{e.class}: #{e.message})"
       end
@@ -93,6 +96,10 @@ module ImportmapPackageManager
             f << %(pin "#{import}", to: "#{url}"\n)
           end
         end
+      end
+
+      def prerelease?(version_string)
+        /[a-zA-Z]/.match?(version_string)
       end
     end
   end
