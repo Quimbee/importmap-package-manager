@@ -62,16 +62,22 @@ module ImportmapPackageManager
       end
 
       def resolve_import_urls(import_definitions)
-        response = Net::HTTP.post(
-          URI("https://api.jspm.io/generate"),
-          {
-            install: import_definitions,
-            flattenScope: true,
-            env: %w[browser module production],
-            defaultProvider: "jspm.io"
-          }.to_json,
-          "Content-Type" => "application/json"
-        )
+        uri = URI("https://api.jspm.io/generate")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        http.read_timeout = ENV.fetch("IPM_READ_TIMEOUT", 60).to_i
+        http.open_timeout = ENV.fetch("IPM_OPEN_TIMEOUT", 60).to_i
+
+        request = Net::HTTP::Post.new(uri)
+        request["Content-Type"] = "application/json"
+        request.body = {
+          install: import_definitions,
+          flattenScope: true,
+          env: %w[browser module production],
+          defaultProvider: "jspm.io"
+        }.to_json
+
+        response = http.request(request)
 
         json_response = JSON.parse(response.body)
 
